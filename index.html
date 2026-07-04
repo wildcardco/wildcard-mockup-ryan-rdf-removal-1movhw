@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RDF Removal | Fast, Hassle-Free Junk Removal</title>
+<meta name="description" content="RDF Removal offers fast, reliable junk removal, debris hauling, furniture & appliance removal, estate cleanouts, and construction debris removal for homes and businesses. Call now for a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#152238;
+    --navy-deep:#0d1626;
+    --orange:#f2691c;
+    --orange-dark:#d8560f;
+    --cream:#fdf8f2;
+    --gray:#5b6472;
+    --line:#e6e1d8;
+    --radius:14px;
+    --shadow: 0 10px 30px rgba(13,22,38,0.12);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--navy-deep);
+    background:var(--cream);
+    line-height:1.55;
+  }
+  h1,h2,h3{
+    font-family:'Archivo Black',sans-serif;
+    line-height:1.15;
+    margin:0 0 .5em;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0 0 1em;}
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .container{
+    width:100%;
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+  .visually-hidden{
+    position:absolute;width:1px;height:1px;overflow:hidden;
+    clip:rect(0 0 0 0);white-space:nowrap;
+  }
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.5em;
+    font-weight:700;
+    font-size:1rem;
+    padding:.9em 1.6em;
+    border-radius:999px;
+    text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    border:2px solid transparent;
+    cursor:pointer;
+  }
+  .btn-primary{
+    background:var(--orange);
+    color:#fff;
+    box-shadow:0 8px 20px rgba(242,105,28,0.35);
+  }
+  .btn-primary:hover{background:var(--orange-dark); transform:translateY(-2px);}
+  .btn-outline{
+    background:transparent;
+    color:var(--cream);
+    border-color:rgba(253,248,242,0.5);
+  }
+  .btn-outline:hover{background:rgba(253,248,242,0.12); transform:translateY(-2px);}
+  .btn-dark-outline{
+    background:transparent;
+    color:var(--navy-deep);
+    border-color:var(--navy-deep);
+  }
+  .btn-dark-outline:hover{background:var(--navy-deep); color:#fff;}
+
+  /* Header */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--navy);
+    color:var(--cream);
+  }
+  .nav-wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 0;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:.6em;
+    font-family:'Archivo Black',sans-serif;
+    font-size:1.15rem;
+    text-decoration:none;
+    color:#fff;
+  }
+  .brand svg{flex-shrink:0;}
+  nav.primary-nav{
+    display:none;
+  }
+  nav.primary-nav ul{
+    list-style:none;
+    display:flex;
+    gap:1.8em;
+    margin:0;
+    padding:0;
+    font-weight:600;
+    font-size:.95rem;
+  }
+  nav.primary-nav a{
+    text-decoration:none;
+    color:var(--cream);
+    opacity:.9;
+  }
+  nav.primary-nav a:hover{opacity:1; color:var(--orange);}
+  .header-call{
+    display:none;
+  }
+  @media(min-width:860px){
+    nav.primary-nav{display:block;}
+    .header-call{display:inline-flex;}
+  }
+
+  /* Hero */
+  .hero{
+    background:
+      radial-gradient(circle at 15% 20%, rgba(242,105,28,0.25), transparent 45%),
+      linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--cream);
+    padding:64px 0 72px;
+  }
+  .hero-inner{
+    display:grid;
+    gap:2.2rem;
+    align-items:center;
+  }
+  @media(min-width:900px){
+    .hero-inner{grid-template-columns:1.1fr 0.9fr;}
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:.5em;
+    background:rgba(242,105,28,0.18);
+    color:var(--orange);
+    border:1px solid rgba(242,105,28,0.4);
+    padding:.4em 1em;
+    border-radius:999px;
+    font-weight:700;
+    font-size:.8rem;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    margin-bottom:1.2em;
+  }
+  .hero h1{
+    font-size:clamp(2rem, 5vw, 3.1rem);
+    color:#fff;
+  }
+  .hero h1 span{color:var(--orange);}
+  .hero-sub{
+    font-size:1.15rem;
+    color:#d7dbe4;
+    max-width:44ch;
+  }
+  .hero-ctas{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1em;
+    margin-top:1.8em;
+  }
+  .hero-visual{
+    background:rgba(253,248,242,0.06);
+    border:1px solid rgba(253,248,242,0.15);
+    border-radius:var(--radius);
+    padding:2rem;
+  }
+  .hero-visual ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    gap:1rem;
+  }
+  .hero-visual li{
+    display:flex;
+    align-items:flex-start;
+    gap:.8em;
+    font-weight:600;
+    color:#fff;
+  }
+  .hero-visual li svg{
+    flex-shrink:0;
+    margin-top:2px;
+  }
+
+  /* Sections generic */
+  section{padding:64px 0;}
+  .section-head{
+    max-width:640px;
+    margin:0 0 2.4rem;
+  }
+  .section-head .kicker{
+    display:inline-block;
+    color:var(--orange);
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:.82rem;
+    margin-bottom:.6em;
+  }
+  .section-head h2{
+    font-size:clamp(1.6rem, 3.4vw, 2.3rem);
+    color:var(--navy-deep);
+  }
+  .section-head p{
+    color:var(--gray);
+    font-size:1.05rem;
+  }
+
+  /* Services */
+  .services{background:#fff;}
+  .service-grid{
+    display:grid;
+    gap:1.4rem;
+    grid-template-columns:1fr;
+  }
+  @media(min-width:640px){
+    .service-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(min-width:980px){
+    .service-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  .service-card{
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:1.8rem;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .service-card:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow);
+  }
+  .service-icon{
+    width:52px;
+    height:52px;
+    border-radius:12px;
+    background:linear-gradient(135deg, var(--orange), var(--orange-dark));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:1rem;
+  }
+  .service-card h3{
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:1.15rem;
+    margin-bottom:.4em;
+    color:var(--navy-deep);
+  }
+  .service-card p{
+    color:var(--gray);
+    font-size:.97rem;
+    margin:0;
+  }
+
+  /* Process strip */
+  .process{
+    background:var(--navy-deep);
+    color:var(--cream);
+  }
+  .process .section-head h2{color:#fff;}
+  .process .section-head p{color:#c4cad6;}
+  .process-grid{
+    display:grid;
+    gap:1.6rem;
+    grid-template-columns:1fr;
+    counter-reset:step;
+  }
+  @media(min-width:760px){
+    .process-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  .process-step{
+    position:relative;
+    padding-left:.2rem;
+  }
+  .process-step .num{
+    font-family:'Archivo Black',sans-serif;
+    font-size:2.4rem;
+    color:var(--orange);
+    display:block;
+    margin-bottom:.3em;
+  }
+  .process-step h3{
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    color:#fff;
+    font-size:1.05rem;
+    margin-bottom:.3em;
+  }
+  .process-step p{
+    color:#c4cad6;
+    font-size:.95rem;
+  }
+
+  /* About */
+  .about{background:#fff;}
+  .about-grid{
+    display:grid;
+    gap:2.2rem;
+    align-items:center;
+  }
+  @media(min-width:900px){
+    .about-grid{grid-template-columns:1fr 1fr;}
+  }
+  .about-card{
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:2rem;
+  }
+  .about-points{
+    list-style:none;
+    margin:1.4em 0 0;
+    padding:0;
+    display:grid;
+    gap:.9rem;
+  }
+  .about-points li{
+    display:flex;
+    gap:.7em;
+    align-items:flex-start;
+    font-weight:600;
+    color:var(--navy-deep);
+  }
+  .about-points svg{flex-shrink:0; margin-top:3px;}
+
+  /* CTA band */
+  .cta-band{
+    background:linear-gradient(120deg, var(--orange), var(--orange-dark));
+    color:#fff;
+    text-align:center;
+    padding:56px 0;
+  }
+  .cta-band h2{
+    color:#fff;
+    font-size:clamp(1.5rem,3.6vw,2.2rem);
+  }
+  .cta-band p{
+    color:rgba(255,255,255,0.9);
+    max-width:50ch;
+    margin:0 auto 1.6em;
+    font-size:1.05rem;
+  }
+  .cta-band .btn-outline{
+    color:#fff;
+    border-color:rgba(255,255,255,0.7);
+  }
+  .cta-band .btn-outline:hover{background:rgba(255,255,255,0.15);}
+
+  /* Contact */
+  .contact{background:var(--navy);}
+  .contact .section-head h2{color:#fff;}
+  .contact .section-head p{color:#c4cad6;}
+  .contact-grid{
+    display:grid;
+    gap:1.6rem;
+    grid-template-columns:1fr;
+  }
+  @media(min-width:760px){
+    .contact-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  .contact-card{
+    background:rgba(253,248,242,0.05);
+    border:1px solid rgba(253,248,242,0.15);
+    border-radius:var(--radius);
+    padding:1.8rem;
+    color:var(--cream);
+  }
+  .contact-card h3{
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:1.05rem;
+    margin-bottom:.4em;
+    display:flex;
+    align-items:center;
+    gap:.6em;
+    color:#fff;
+  }
+  .contact-card a{
+    color:var(--orange);
+    font-weight:700;
+    text-decoration:none;
+    font-size:1.1rem;
+  }
+  .contact-card a:hover{text-decoration:underline;}
+  .contact-card p{color:#c4cad6; margin:0;}
+
+  /* Footer */
+  footer{
+    background:var(--navy-deep);
+    color:#9aa3b2;
+    padding:32px 0;
+    font-size:.88rem;
+  }
+  .footer-inner{
+    display:flex;
+    flex-direction:column;
+    gap:.6rem;
+    align-items:center;
+    text-align:center;
+  }
+  @media(min-width:640px){
+    .footer-inner{flex-direction:row; justify-content:space-between; text-align:left;}
+  }
+  footer a{color:#c4cad6; text-decoration:none;}
+  footer a:hover{color:var(--orange);}
+  .wildcard-credit{
+    color:#6c7688;
+  }
+  .wildcard-credit a{color:#8b93a3; font-weight:600;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-wrap">
+    <a href="#top" class="brand">
+      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect width="40" height="40" rx="10" fill="#f2691c"/>
+        <path d="M9 27L15 13H19L13 27H9Z" fill="#fff"/>
+        <path d="M18 27L24 13H28L22 27H18Z" fill="#fff"/>
+        <path d="M27 27L31 17H33.5L30 27H27Z" fill="#fff" opacity="0.7"/>
+      </svg>
+      RDF Removal
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary header-call" href="tel:+12197758532">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.1 2.2 2.9 4 5.1 5.1l1.7-1.7c.2-.2.6-.3.9-.2 1 .3 2 .5 3.1.5.5 0 .9.4.9.9v3.1c0 .5-.4.9-.9.9C9.7 19.4 4.6 14.3 4.6 6.6c0-.5.4-.9.9-.9h3.1c.5 0 .9.4.9.9 0 1.1.2 2.1.5 3.1.1.3 0 .7-.2.9L6.6 10.8z" fill="#fff"/></svg>
+      Call Now
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <span class="eyebrow">Junk Removal, Done Right</span>
+        <h1>Clear the clutter with <span>RDF Removal</span></h1>
+        <p class="hero-sub">Fast, hassle-free junk removal for homeowners, renters, landlords, and local businesses. One call and we handle the heavy lifting — you get your space back.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="tel:+12197758532">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.1 2.2 2.9 4 5.1 5.1l1.7-1.7c.2-.2.6-.3.9-.2 1 .3 2 .5 3.1.5.5 0 .9.4.9.9v3.1c0 .5-.4.9-.9.9C9.7 19.4 4.6 14.3 4.6 6.6c0-.5.4-.9.9-.9h3.1c.5 0 .9.4.9.9 0 1.1.2 2.1.5 3.1.1.3 0 .7-.2.9L6.6 10.8z" fill="#fff"/></svg>
+            Call (219) 775-8532
+          </a>
+          <a class="btn btn-outline" href="#contact">Get a Free Quote</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <ul>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="#f2691c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Same-week pickup for most jobs
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="#f2691c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Residential &amp; commercial jobs welcome
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="#f2691c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            We do the loading — you don't lift a thing
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="#f2691c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Straightforward pricing, no surprises
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">What We Haul</span>
+        <h2>Junk removal for every situation</h2>
+        <p>From a single old couch to a full property cleanout, our crew shows up ready to work and leaves your space clean.</p>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M6 7l1 12a2 2 0 002 2h6a2 2 0 002-2l1-12M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Junk Removal</h3>
+          <p>General clutter, old items, and unwanted stuff piling up? We haul it away quickly so you can reclaim your space.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M6 6v12a2 2 0 002 2h8a2 2 0 002-2V6M4 10h16" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Debris Hauling</h3>
+          <p>Yard waste, remodeling scraps, or general debris — we load it up and haul it off, fast and clean.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V9a1 1 0 011-1h14a1 1 0 011 1v11M4 20h16M8 20v-4a1 1 0 011-1h6a1 1 0 011 1v4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Furniture &amp; Appliance Removal</h3>
+          <p>Couches, mattresses, fridges, washers — heavy items get heavy lifting from our crew, not you.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12l9-9 9 9M5 10v10h14V10" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Property &amp; Estate Cleanouts</h3>
+          <p>Full property or estate cleanouts handled with care and efficiency, so the space is move-in or sale-ready.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1 3-6z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Construction Debris Removal</h3>
+          <p>Wrapping up a renovation or build? We clear scrap materials, drywall, and job-site debris quickly.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Residential &amp; Commercial Service</h3>
+          <p>Homeowners, renters, landlords, and small businesses — we tailor the job to your property and timeline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">How It Works</span>
+        <h2>Simple, no-hassle process</h2>
+        <p>No complicated paperwork, no guessing games — just a quick call and a clean space.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <span class="num">01</span>
+          <h3>Call or request a quote</h3>
+          <p>Tell us what needs to go and where — we'll get back to you fast with next steps.</p>
+        </div>
+        <div class="process-step">
+          <span class="num">02</span>
+          <h3>We schedule your pickup</h3>
+          <p>We work around your timeline, whether it's today or later this week.</p>
+        </div>
+        <div class="process-step">
+          <span class="num">03</span>
+          <h3>We haul, you relax</h3>
+          <p>Our crew loads and hauls everything away — you don't lift a finger.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div>
+        <span class="kicker" style="color:var(--orange); font-weight:800; text-transform:uppercase; letter-spacing:.08em; font-size:.82rem;">About Us</span>
+        <h2>Local, responsive, and ready to help</h2>
+        <p style="color:var(--gray); font-size:1.05rem;">RDF Removal is a junk removal service built around one simple idea: getting rid of unwanted stuff shouldn't be complicated. We work with homeowners, renters, landlords, and small businesses to clear out junk, debris, and clutter quickly — with friendly, professional service from start to finish.</p>
+      </div>
+      <div class="about-card">
+        <h3 style="font-family:'Inter',sans-serif; font-weight:800; font-size:1.15rem; margin-bottom:.6em;">Why locals choose RDF Removal</h3>
+        <ul class="about-points">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="#f2691c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Responsive local service that shows up when promised
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="#f2691c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Simple, no-hassle process from quote to pickup
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="#f2691c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Fair, transparent pricing — no surprise fees
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="#f2691c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Comfortable with residential and commercial jobs alike
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Got junk? Let's get rid of it.</h2>
+      <p>Call now to schedule a pickup or request a free quote. Fast, friendly service — no obligation.</p>
+      <a class="btn btn-outline" href="tel:+12197758532">Call (219) 775-8532</a>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Get In Touch</span>
+        <h2>Ready when you are</h2>
+        <p>Reach out for a fast, free quote on your junk removal or cleanout project.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.1 2.2 2.9 4 5.1 5.1l1.7-1.7c.2-.2.6-.3.9-.2 1 .3 2 .5 3.1.5.5 0 .9.4.9.9v3.1c0 .5-.4.9-.9.9C9.7 19.4 4.6 14.3 4.6 6.6c0-.5.4-.9.9-.9h3.1c.5 0 .9.4.9.9 0 1.1.2 2.1.5 3.1.1.3 0 .7-.2.9L6.6 10.8z" fill="#f2691c"/></svg>
+            Call Us
+          </h3>
+          <p style="margin-bottom:.5em;">Fastest way to get a quote or book a pickup.</p>
+          <a href="tel:+12197758532">(219) 775-8532</a>
+        </div>
+        <div class="contact-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#f2691c" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="#f2691c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Request a Quote
+          </h3>
+          <p>Call and describe your job — we'll walk you through pricing before any work begins.</p>
+        </div>
+        <div class="contact-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z" stroke="#f2691c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="#f2691c" stroke-width="2"/></svg>
+            Service Area
+          </h3>
+          <p>Proudly serving the local community. Call to confirm availability at your address.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <strong style="color:#c4cad6;">RDF Removal</strong> — Junk Removal Service
+      <div>&copy; 2026 RDF Removal. All rights reserved.</div>
+    </div>
+    <div class="wildcard-credit">
+      Website sample by <a href="#" rel="noopener">Wild Card Creative Co</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
